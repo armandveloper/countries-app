@@ -1,0 +1,252 @@
+:root {
+	--color-elements: hsl(0, 0%, 100%);
+	--color-background: hsl(0, 0%, 98%);
+	--color-text: hsl(200, 15%, 8%);
+	--color-bg-option: hsla(200, 15%, 8%, 0.1);
+	--color-input-text: hsl(0, 0%, 52%);
+}
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body.dark {
+	--color-elements: hsl(209, 23%, 22%);
+	--color-background: hsl(207, 26%, 17%);
+	--color-text: hsl(0, 0%, 100%);
+	--color-input-text: hsl(0, 0%, 100%);
+}
+body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+	font-family: 'Nunito Sans', system-ui, sans-serif;
+	font-size: 1.6rem;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.wrapper {
+	max-width: calc(144rem + (2rem * 2));
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+.header {
+	background-color: var(--color-elements);
+}
+.header__inner {
+	padding: 3rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo {
+	color: var(--color-text);
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+.toggle--theme {
+	background: none;
+	border: none;
+	color: var(--color-text);
+	cursor: pointer;
+	font-size: 1.6rem;
+	display: inline-flex;
+	align-items: center;
+	transition: transform 0.3s;
+}
+.toggle--theme:focus {
+	outline: none;
+	transform: scale(1.05);
+}
+.toggle__text {
+	margin-left: 0.8rem;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+.filter-actions {
+	margin-top: 2.5rem;
+}
+@media (min-width: 56.25em) {
+	.filter-actions {
+		margin-top: 5rem;
+	}
+	.filter-actions__grid {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+.search__area {
+	margin-bottom: 4rem;
+}
+.search {
+	background-color: var(--color-elements);
+	border-radius: 1rem;
+	height: 8rem;
+	display: flex;
+	align-items: center;
+	padding-left: 3rem;
+	padding-right: 1.5rem;
+}
+@media (min-width: 56.25em) {
+	.search__area {
+		max-width: 45rem;
+		width: 100%;
+	}
+	.search {
+		height: 6rem;
+	}
+}
+.search__button {
+	color: var(--color-input-text);
+	cursor: pointer;
+	background: none;
+	border: none;
+	font-size: 2rem;
+	margin-right: 2rem;
+}
+.search__button:focus {
+	outline: none;
+}
+.search__input {
+	flex: 1;
+	background: none;
+	border: none;
+	color: var(--color-input-text);
+	font-family: inherit;
+	font-size: 1.6rem;
+}
+.search__input:focus {
+	outline: none;
+}
+.search__input::placeholder {
+	color: var(--color-input-text);
+	font-size: 1.6rem;
+}
+@media (min-width: 56.25em) {
+	.select-area {
+		max-width: 25rem;
+		width: 100%;
+	}
+}
+.select {
+	position: relative;
+	overflow: hidden;
+}
+.select.open {
+	overflow: visible;
+}
+.select__header {
+	background-color: var(--color-elements);
+	border-radius: 1rem;
+	cursor: default;
+	height: 6rem;
+	padding-left: 3rem;
+	padding-right: 1.5rem;
+	user-select: none;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.select__label {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+.select__button {
+	border: none;
+	background: none;
+	color: var(--color-text);
+}
+.select__list {
+	background-color: var(--color-elements);
+	border-radius: 1rem;
+	list-style: none;
+	margin: 0.8rem 0 0;
+	padding: 2rem 1.5rem 2rem 3rem;
+	width: 60%;
+	z-index: 100;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+@media (min-width: 56.25em) {
+	.select__header,
+	.select__list {
+		width: 100%;
+	}
+}
+.select.open .select__list {
+	opacity: 1;
+}
+.select__option {
+	cursor: default;
+	font-size: 1.4rem;
+	padding: 0.5rem;
+}
+.select__option:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+.select__option:hover {
+	background-color: var(--color-bg-option);
+}
+.select__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+}
+.country-section {
+	margin: 5rem 0;
+}
+.country__list {
+	padding: 0 3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	row-gap: 2.5rem;
+	column-gap: 6rem;
+}
+@media (min-width: 56.25em) {
+	.country__list {
+		row-gap: 6rem;
+	}
+}
+.country__item {
+	background-color: var(--color-elements);
+	border-radius: 1rem;
+	cursor: pointer;
+	overflow: hidden;
+}
+.country__flag {
+	width: 100%;
+	height: 18rem;
+	display: block;
+	object-fit: cover;
+}
+.country__body {
+	padding: 3rem 2rem;
+}
+.country__name {
+	margin: 0 0 1.5rem;
+}
+.country__meta {
+	font-size: 1.4rem;
+	font-weight: 600;
+	margin: 0.6rem 0 0;
+}
+.country__info {
+	font-weight: 300;
+}

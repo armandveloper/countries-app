@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Countries app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/4500871b95.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Countries App</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="wrapper">
+				<div class="header__inner">
+					<a class="logo" href="/">Where in the world?</a>
+					<button
+						class="toggle--theme"
+						title="Toggle Dark Mode"
+						id="toggle-theme"
+					>
+						<i class="far fa-moon"></i>
+						<span class="toggle__text">Dark Mode</span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div class="filter-actions">
+			<div class="wrapper">
+				<div class="filter-actions__grid">
+					<div class="search__area">
+						<form class="search" id="search-form">
+							<button
+								aria-label="Search"
+								title="Search"
+								class="search__button"
+							>
+								<i class="fas fa-search"></i>
+							</button>
+							<input
+								type="text"
+								id="search-input"
+								class="search__input"
+								aria-label="Search for a country"
+								placeholder="Search for a country..."
+							/>
+						</form>
+					</div>
+					<div class="select-area">
+						<div class="select" id="select">
+							<div class="select__header" id="select-header">
+								<p class="select__label">Filter by Region</p>
+								<button
+									class="select__button"
+									title="View options"
+								>
+									<i class="fas fa-chevron-down"></i>
+								</button>
+							</div>
+							<ul class="select__list" id="select-list">
+								<li class="select__option">Africa</li>
+								<li class="select__option">Americas</li>
+								<li class="select__option">Asia</li>
+								<li class="select__option">Europe</li>
+								<li class="select__option">Oceania</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="country-section">
+			<div class="wrapper">
+				<ul class="country__list" id="country-list"></ul>
+			</div>
+		</div>
+		<script src="js/app.js"></script>
+	</body>
+</html>
