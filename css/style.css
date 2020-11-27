@@ -176,7 +176,7 @@ ul {
 	border-radius: 1rem;
 	list-style: none;
 	margin: 0.8rem 0 0;
-	padding: 2rem 1.5rem 2rem 3rem;
+	padding: 2rem 0 2rem 0;
 	width: 60%;
 	z-index: 100;
 	position: absolute;
@@ -197,10 +197,10 @@ ul {
 .select__option {
 	cursor: default;
 	font-size: 1.4rem;
-	padding: 0.5rem;
+	padding: 0.5rem 2rem 0.5rem 3.5rem;
 }
 .select__option:not(:last-child) {
-	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 .select__option:hover {
 	background-color: var(--color-bg-option);

@@ -343,7 +343,7 @@ const handleKeyDown = (e) => {
 	}
 };
 
-const handleSelectHeaderClick = ({ target }) => {
+const handleSelectHeaderClick = () => {
 	const isOpen = $select.classList.toggle('open');
 	if (isOpen) {
 		// Crea un overlay invisible que permite detectar un click fuera del select para cerrarlo (similar a un modal)
@@ -362,6 +362,9 @@ const handleSelectHeaderClick = ({ target }) => {
 
 const handleSelectListClick = ({ target }) => {
 	const region = target.innerText;
+	if (region === $selectList.innerText) {
+		return;
+	}
 	$select.classList.remove('open');
 	document.getElementById('select-overlay').remove();
 	filterByRegion(region);
@@ -386,7 +389,6 @@ const handleListClick = ({ target }) => {
 };
 
 const addEventListeners = () => {
-	console.log('agregando eventos');
 	// Detecta cuando hay que cerrar el select al presionar esc
 	document.addEventListener('keydown', handleKeyDown);
 	// Abre y cierra el select
@@ -445,7 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 			.catch(handleError);
 	} else {
-		console.log('Está en el strg');
 		renderCountries({ data: countries });
 	}
 });
